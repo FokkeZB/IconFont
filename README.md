@@ -31,7 +31,7 @@ In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 	
 	var button = Ti.UI.createButton({
 		font: {
-			fontFamily: 'FontAwersome'
+			fontFamily: 'FontAwesome'
 		},
 		title: icons.flag
 	});
