@@ -1,0 +1,40 @@
+{
+  "name": "iconfont",
+  "description": "CLI that converts Icon Font CSS StyleSheets into CommonJS modules exporting the unicodes by name.",
+  "keywords": [
+    "fonts",
+    "icons"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Fokke Zandbergen",
+    "email": "mail@fokkezb.nl"
+  },
+  "maintainers": [{
+    "name": "Fokke Zandbergen",
+    "email": "mail@fokkezb.nl"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fokkezb/iconfont.git"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "commander": "^2.3.0",
+    "css": "^2.1.0",
+    "underscore": "^1.7.0",
+    "update-notifier": "^0.2.0"
+  },
+  "license": "MIT",
+  "bin": "./bin.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "homepage": "https://github.com/fokkezb/iconfont",
+  "readme": "",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/fokkezb/iconfont/issues"
+  }
+}
