@@ -45,7 +45,7 @@ In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 	
 ## Issues
 
-Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/ticons-cli/issues).
+Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/IconFont/issues).
 
 ## License
 
