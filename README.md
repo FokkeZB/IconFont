@@ -27,7 +27,7 @@ This would create a file named `font-awesome.js` in the same directory as the CS
 
 In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 
-	var icons = require('font-awesome.js');
+	var icons = require('font-awesome');
 	
 	var button = Ti.UI.createButton({
 		font: {
@@ -35,6 +35,18 @@ In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 		},
 		title: icons.flag
 	});
+	
+In [Alloy](http://appcelerator.com/alloy) you can do:
+
+*alloy.js*
+
+	Alloy.Globals.icons = require('font-awesome');
+	
+*index.tss*
+
+	"Button": {
+		title: Alloy.Globals.icons.flag
+	}
 	
 ## Notes
 
