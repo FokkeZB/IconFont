@@ -27,14 +27,26 @@ This would create a file named `font-awesome.js` in the same directory as the CS
 
 In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 
-	var icons = require('font-awesome.js');
+	var icons = require('font-awesome');
 	
 	var button = Ti.UI.createButton({
 		font: {
-			fontFamily: 'FontAwersome'
+			fontFamily: 'FontAwesome'
 		},
 		title: icons.flag
 	});
+	
+In [Alloy](http://appcelerator.com/alloy) you can do:
+
+*alloy.js*
+
+	Alloy.Globals.icons = require('font-awesome');
+	
+*index.tss*
+
+	"Button": {
+		title: Alloy.Globals.icons.flag
+	}
 	
 ## Notes
 
@@ -52,7 +64,7 @@ In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 	
 ## Issues
 
-Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/ticons-cli/issues).
+Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/IconFont/issues).
 
 ## License
 
