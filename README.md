@@ -41,7 +41,14 @@ In [Titanium](http://appcelerator.com/titanium), I'd use the module like this:
 - Icon names are camel-cased (`arrow-up` becomes `arrowUp`).
 - If **all** icon names share the same prefix this will be stripped out (`icon-flag` becomes `flag`).
 - The CLI expects selectors ending with `:before`.
-- The CLI expects declerations with a `content` property and a valid unicode string as value.
+- The CLI expects declerations with a `content` property and a valid (unicode) string as value.
+
+## Changelog
+
+* 0.2.0:
+	- Adds support for non-unicode content
+	- Fixes camelCase for `some-1` (#3)
+* 0.1.0: Initial release
 	
 ## Issues
 

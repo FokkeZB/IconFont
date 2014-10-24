@@ -93,31 +93,39 @@ fs.readFile(stylesheet, function(err, data) {
 
     var content = declaration.value;
 
-    var matches = content.match(/^("|')\\([a-z0-9]{1,4})\1$/i);
+    var matches = content.match(/^("|')(.+)\1$/i);
 
     if (!matches) {
-      console.warn(chalk.yellow('Skipping content without unicode string value: ') + chalk.blue(css.stringifyRule(rule)));
+      console.warn(chalk.yellow('Skipping content without string value: ') + chalk.blue(css.stringifyRule(rule)));
       return;
     }
 
-    var unicode = '\\u' + Array(4 + 1 - matches[2].length).join('0') + matches[2];
+    var string = matches[2];
+
+    if (string.match(/^\\[a-z0-9]{1,4}$/i)) {
+      string = '\\u' + (new Array(4 + 2 - string.length)).join('0') + string.substr(1);
+    }
 
     _.each(rule.selectors, function(selector) {
 
-      var matches = selector.match(/^\.(([a-z0-9]+-)?[a-z0-9]+(?:-[a-z0-9]+)*):before$/i);
+      var matches2 = selector.match(/^\.(([a-z0-9]+-)?[a-z0-9]+(?:-[a-z0-9]+)*):before$/i);
 
       if (!matches) {
         return;
       }
 
-      var name = matches[1];
-      var prefix = matches[2];
+      var name = matches2[1];
+      var prefix = matches2[2];
+
+      if (name === 'icon-fold') {
+        console.log(matches, string);
+      }
 
       if (prefixes.indexOf(prefix) === -1) {
         prefixes.push(prefix);
       }
 
-      icons[name] = unicode;
+      icons[name] = string;
     });
   });
 
@@ -140,7 +148,7 @@ fs.readFile(stylesheet, function(err, data) {
     }
 
     if (name.indexOf('-') !== -1) {
-      name = name.replace(/(\-[a-z])/g, function($1) {
+      name = name.replace(/(\-[a-z0-9])/g, function($1) {
         return $1.toUpperCase().replace('-', '');
       });
     }
