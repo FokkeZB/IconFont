@@ -108,18 +108,14 @@ fs.readFile(stylesheet, function(err, data) {
 
     _.each(rule.selectors, function(selector) {
 
-      var matches2 = selector.match(/^\.(([a-z0-9]+-)?[a-z0-9]+(?:-[a-z0-9]+)*):before$/i);
+      var matches2 = selector.match(/^\.(([a-z0-9]+-)?[a-z0-9]+(?:[_-][a-z0-9]+)*):before$/i);
 
-      if (!matches) {
+      if (!matches2) {
         return;
       }
 
       var name = matches2[1];
       var prefix = matches2[2];
-
-      if (name === 'icon-fold') {
-        console.log(matches, string);
-      }
 
       if (prefixes.indexOf(prefix) === -1) {
         prefixes.push(prefix);
@@ -147,9 +143,9 @@ fs.readFile(stylesheet, function(err, data) {
       name = name.substr(prefix.length);
     }
 
-    if (name.indexOf('-') !== -1) {
-      name = name.replace(/(\-[a-z0-9])/g, function($1) {
-        return $1.toUpperCase().replace('-', '');
+    if (name.indexOf('-') !== -1 || name.indexOf('_') !== -1) {
+      name = name.replace(/[_-]([a-z0-9])([^_-]*)/gi, function(match, p1, p2) {
+        return p1.toUpperCase() + p2.toLowerCase();
       });
     }
 
