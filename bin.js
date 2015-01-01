@@ -78,10 +78,16 @@ fs.readFile(stylesheet, function(err, data) {
 
   var icons = {};
   var prefixes = [];
+  var fontFamily = '';
 
   _.each(obj.stylesheet.rules, function(rule) {
 
     if (!rule.selectors || !rule.declarations) {
+      if(rule.type=='font-face'){
+        fontFamily = _.findWhere(rule.declarations,{
+          property : 'font-family'
+        }).value;
+      }
       return;
     }
 
@@ -142,8 +148,8 @@ fs.readFile(stylesheet, function(err, data) {
     
     _.each(_.keys(icons), function(name, i) {
       var unicode = icons[name];
-      data+= util.format('".%s": { font: { fontFamily: "FontAwesome"}, text: "%s"}\n',
-        name, unicode);
+      data+= util.format('".%s": { font: { fontFamily: "%s"}, text: "%s"}\n',
+        name, fontFamily, unicode);
     });
   }else{
     data = 'module.exports = {\n';
