@@ -86,7 +86,7 @@ fs.readFile(stylesheet, function(err, data) {
       if(rule.type=='font-face'){
         fontFamily = _.findWhere(rule.declarations,{
           property : 'font-family'
-        }).value;
+        }).value.replace(/["']/g, '');;
       }
       return;
     }
