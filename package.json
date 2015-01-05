@@ -3,19 +3,22 @@
   "description": "CLI that converts Icon Font CSS StyleSheets into CommonJS modules exporting the unicodes by name.",
   "keywords": [
     "fonts",
-    "icons"
+    "icons",
+    "css",
+    "iconfonts",
+    "tss",
+    "alloy",
+    "titanium"
   ],
   "version": "0.3.0",
   "author": {
     "name": "Fokke Zandbergen",
     "email": "mail@fokkezb.nl"
   },
-  "maintainers": [
-    {
-      "name": "Fokke Zandbergen",
-      "email": "mail@fokkezb.nl"
-    }
-  ],
+  "maintainers": [{
+    "name": "Fokke Zandbergen",
+    "email": "mail@fokkezb.nl"
+  }],
   "repository": {
     "type": "git",
     "url": "git://github.com/fokkezb/iconfont.git"
