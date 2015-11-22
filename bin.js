@@ -171,7 +171,7 @@ fs.readFile(stylesheet, function(err, data) {
         });
       }
 
-      data += '  ' + name + ': "' + unicode + '"' + ((i === ln - 1) ? '' : ',') + '\n';
+      data += '  "' + name + '": "' + unicode + '"' + ((i === ln - 1) ? '' : ',') + '\n';
     });
 
     data += '};';
