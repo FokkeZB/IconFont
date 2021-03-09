@@ -10,7 +10,7 @@
     "alloy",
     "titanium"
   ],
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": {
     "name": "Fokke Zandbergen",
     "email": "mail@fokkezb.nl"
@@ -27,11 +27,11 @@
   },
   "preferGlobal": true,
   "dependencies": {
-    "chalk": "^0.5.1",
-    "commander": "^2.3.0",
-    "css": "^2.1.0",
-    "underscore": "^1.7.0",
-    "update-notifier": "^0.2.0"
+    "chalk": "^4.1.0",
+    "commander": "^7.1.0",
+    "css": "^3.0.0",
+    "underscore": "*",
+    "update-notifier": "^5.1.0"
   },
   "license": "MIT",
   "bin": "./bin.js",
